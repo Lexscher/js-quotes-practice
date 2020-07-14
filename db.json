@@ -53,6 +53,11 @@
     {
       "quoteId": 2,
       "id": 11
+    },
+    {
+      "quote": "The tea is piping hot",
+      "author": "Garrett",
+      "id": 14
     }
   ],
   "likes": [
@@ -60,6 +65,106 @@
       "id": 1,
       "quoteId": 1,
       "createdAt": 1558524356
+    },
+    {
+      "quoteId": 2,
+      "id": 2
+    },
+    {
+      "quoteId": 2,
+      "id": 3
+    },
+    {
+      "quoteId": 2,
+      "id": 4
+    },
+    {
+      "quoteId": 2,
+      "id": 5
+    },
+    {
+      "quoteId": 2,
+      "id": 6
+    },
+    {
+      "quoteId": 2,
+      "id": 7
+    },
+    {
+      "quoteId": 2,
+      "id": 8
+    },
+    {
+      "quoteId": 2,
+      "id": 9
+    },
+    {
+      "quoteId": 2,
+      "id": 10
+    },
+    {
+      "quoteId": 2,
+      "id": 11
+    },
+    {
+      "quoteId": 2,
+      "id": 12
+    },
+    {
+      "quoteId": 2,
+      "id": 13
+    },
+    {
+      "quoteId": 3,
+      "id": 14
+    },
+    {
+      "quoteId": 3,
+      "id": 15
+    },
+    {
+      "quoteId": 3,
+      "id": 16
+    },
+    {
+      "quoteId": 3,
+      "id": 17
+    },
+    {
+      "quoteId": 3,
+      "id": 18
+    },
+    {
+      "quoteId": 3,
+      "id": 19
+    },
+    {
+      "quoteId": 3,
+      "id": 20
+    },
+    {
+      "quoteId": 3,
+      "id": 21
+    },
+    {
+      "quoteId": 3,
+      "id": 22
+    },
+    {
+      "quoteId": 3,
+      "id": 23
+    },
+    {
+      "quoteId": 5,
+      "id": 24
+    },
+    {
+      "quoteId": 5,
+      "id": 25
+    },
+    {
+      "quoteId": 5,
+      "id": 26
     }
   ]
 }
