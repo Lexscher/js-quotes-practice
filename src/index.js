@@ -3,6 +3,10 @@ const quotesURL = 'http://localhost:3000/quotes';
 const getQuotesURL = quotesURL + '?_embed=likes';
 const likesURL = 'http://localhost:3000/likes';
 
+const state = {
+  sorted: false,
+};
+
 // dom alias
 const qs = (tag) => document.querySelector(tag);
 const ce = (tag) => document.createElement(tag);
@@ -10,6 +14,19 @@ const ce = (tag) => document.createElement(tag);
 // DOM Elements from page
 const quoteList = qs('#quote-list');
 const quoteForm = qs('#new-quote-form');
+
+const clearQuotesList = () => (quoteList.innerHTML = '');
+
+const sortButton = ce('button');
+sortButton.classList.add('btn-success');
+sortButton.innerText = 'Sort by Author: OFF';
+sortButton.addEventListener('click', (evt) => {
+  state.sorted = !state.sorted;
+  fetchAllQuotes();
+  sortButton.innerText = 'Sort by Author: ' + (state.sorted ? 'ON' : 'OFF');
+});
+// debugger
+quoteList.parentElement.prepend(sortButton);
 
 quoteForm.addEventListener('click', (evt) => {
   if (evt.target.type == 'submit') {
@@ -25,10 +42,14 @@ quoteForm.addEventListener('click', (evt) => {
 });
 
 const fetchAllQuotes = () => {
+  clearQuotesList();
   fetch(getQuotesURL)
     .then((response) => response.json())
     .then((quotesData) => {
-      quotesData.forEach(slapQuoteOnDOM);
+      const quotesList = state.sorted
+        ? [...quotesData].sort((a, b) => (a.author > b.author ? 1 : -1))
+        : quotesData;
+      quotesList.forEach(slapQuoteOnDOM);
     });
 };
 
@@ -116,7 +137,7 @@ const likeQuote = (quoteId) => {
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
-    body: JSON.stringify({ quoteId }),
+    body: JSON.stringify({ quoteId, createdAt: Date.now() }),
   };
 
   return fetch(likesURL, config);
